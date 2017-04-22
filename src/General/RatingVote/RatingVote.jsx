@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import importcss from 'importcss';
 import {MdThumbUp, MdThumbDown} from 'react-icons/lib/md';
@@ -6,11 +7,11 @@ import {MdThumbUp, MdThumbDown} from 'react-icons/lib/md';
 @importcss(require('./RatingVote.css'))
 class RatingVote extends Component {
   static propTypes = {
-    activeVote: React.PropTypes.oneOf([-1, 0, 1]),
-    rating: React.PropTypes.number,
-    likesValue: React.PropTypes.number,
-    dislikesValue: React.PropTypes.number,
-    disable: React.PropTypes.bool
+    activeVote: PropTypes.oneOf([-1, 0, 1]),
+    rating: PropTypes.number,
+    likesValue: PropTypes.number,
+    dislikesValue: PropTypes.number,
+    disable: PropTypes.bool
   };
   static defaultProps = {
     activeVote: 0,
