@@ -63,6 +63,7 @@
     height: 22px;
     line-height: 23px;
     min-width: 40px;
+    padding: 0 10px;
 
     &.positive {
       color: #3c6;
