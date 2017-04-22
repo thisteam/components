@@ -1,0 +1,78 @@
+.Vote {
+  display: inline-flex;
+
+  svg {
+    fill: currentColor;
+    opacity: inherit;
+  }
+
+  a {
+    color: inherit;
+    opacity: inherit;
+  }
+
+  &.disable {
+    .rating {
+      cursor: default;
+    }
+  }
+
+  &:not(.disable):hover {
+    .like, .dislike {
+      visibility: visible !important;
+    }
+  }
+
+  .vote-btn {
+    visibility: hidden;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      cursor: default;
+
+      a {
+        cursor: default;
+      }
+    }
+  }
+
+  .dislike {
+    color: red;
+    padding-right: 10px;
+  }
+
+  .like {
+    color: green;
+    padding-left: 10px;
+  }
+
+  .rating {
+    color: #818181;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background: #f4f4f4;
+    height: 22px;
+    line-height: 23px;
+    min-width: 40px;
+
+    &.positive {
+      color: #3c6;
+      background: #effbf3;
+    }
+
+    &.negative {
+      color: #fb4f4f;
+      background: #fff1f1;
+    }
+  }
+}
+
