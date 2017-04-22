@@ -57,7 +57,7 @@ class RatingVote extends Component {
     const Dislike = (
       <div styleName={`vote-btn dislike ${styles.dislike}`}>
         <a href="#" onClick={!disliked ? this.dislikeClickHandler : null} title={dislikesValue ? dislikesValue : ''}>
-          <MdThumbDown />
+          <MdThumbDown size={20} />
         </a>
       </div>
     );
@@ -65,7 +65,7 @@ class RatingVote extends Component {
     const Like = (
       <div styleName={`vote-btn like ${styles.like}`}>
         <a href="#" onClick={!liked ? this.likeClickHandler : null} title={likesValue ? likesValue : ''}>
-          <MdThumbUp />
+          <MdThumbUp size={20} />
         </a>
       </div>
     );
