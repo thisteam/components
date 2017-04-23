@@ -5,7 +5,7 @@ import Like from '../Like';
 export default class TestLike extends Component {
 
   static defaultProps = {
-    isLiked: null,
+    isLiked: false,
     likeValue: 0
   };
 
