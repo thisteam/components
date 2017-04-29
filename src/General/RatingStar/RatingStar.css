@@ -1,0 +1,35 @@
+.rate{
+  vertical-align:middle;
+}
+.rate__link{
+  display: table-cell;
+  text-decoration: none;
+  color: grey;
+  height: 1em;
+  font-size: 2em;
+  vertical-align:middle;
+  outline:none;
+}
+.rate__link:after{
+  content:"☆";
+}
+.rate__link.rate__link__active:after{
+   color: blue;
+}
+.rate.rate__active .rate__link:after{
+   color:blue;
+}
+.rate__link.rate__link__active ~ .rate__link:after{
+   color: grey;
+}
+
+.rate:hover .rate__link:after {
+  content:'★';
+}
+.rate__link:hover ~ .rate__link:after{
+  content:"☆";
+}
+.rate__link:active{
+  color: black;
+  outline: none;
+}
