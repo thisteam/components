@@ -19,7 +19,7 @@ export default class TestVote extends Component {
       activeVote: nextProps.activeVote
     })
   }
-  onVote = value => {
+  onChange = value => {
     this.setState({
       rating: value,
       activeVote: value
@@ -28,7 +28,7 @@ export default class TestVote extends Component {
   render() {
     const {rating, activeVote} = this.state;
     return (
-      <RatingVote onVote={this.onVote} rating={rating} activeVote={activeVote} />
+      <RatingVote onChange={this.onChange} value={rating} activeValue={activeVote} />
     );
   }
 }

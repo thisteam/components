@@ -5,30 +5,30 @@ import importcss from 'importcss';
 @importcss(require('./RatingStar.css'))
 export default class RatingStar extends Component {
   static propTypes={
-     value: PropTypes.number,
+     activeValue: PropTypes.number,
      onChange: PropTypes.func
   };
 
   static defaultProps={
-      value: 0,
+    activeValue: 0,
   };
 
   constructor(props){
      super(props);
      this.state={
-        value: props.value
+       activeValue: props.activeValue
      };
   }
 
   componentWillReceiveProps(props){
     this.setState({
-      value: props.value
+      activeValue: props.activeValue
     });
   }
 
   onClick = (e)=>{
     e.preventDefault();
-    this.setState({value: e.target.dataset.value});
+    this.setState({activeValue: e.target.dataset.value});
     this.props.onChange && this.props.onChange(e.target.dataset.value);
   };
 
@@ -40,13 +40,13 @@ export default class RatingStar extends Component {
      const Links = this.getRange().map(n => (
         <a
           href="#"
-          styleName={'rate__link '+ ((String(n)==this.state.value) ? 'rate__link__active' : '')}
+          styleName={'rate__link '+ ((String(n)==this.state.activeValue) ? 'rate__link__active' : '')}
           key={String(n)}
           data-value={n}
           onClick={this.onClick}
         />
      ));
 
-     return <div styleName={'rate ' + (( this.state.value != 0) ? 'rate__active' : '')}>{Links}</div>;
+     return <div styleName={'rate ' + (( this.state.activeValue != 0) ? 'rate__active' : '')}>{Links}</div>;
   }
 }

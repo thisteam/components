@@ -24,7 +24,7 @@ export default class TestLike extends Component {
     })
   }
 
-  onVote = (like) => {
+  onChange = (like) => {
     const likeValue = (like) ?
       this.state.likeValue + 1 :
       this.state.likeValue - 1;
@@ -37,7 +37,7 @@ export default class TestLike extends Component {
   render() {
     const {isLiked, likeValue} = this.state;
     return(
-      <Like onVote={this.onVote} isLiked={isLiked} likeValue={likeValue} />
+      <Like onChange={this.onChange} isLiked={isLiked} value={likeValue} />
     );
   }
 

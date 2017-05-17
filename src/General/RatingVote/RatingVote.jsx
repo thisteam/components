@@ -7,36 +7,36 @@ import {MdThumbUp, MdThumbDown} from 'react-icons/lib/md';
 @importcss(require('./RatingVote.css'))
 class RatingVote extends Component {
   static propTypes = {
-    activeVote: PropTypes.oneOf([-1, 0, 1]),
-    rating: PropTypes.number,
+    activeValue: PropTypes.oneOf([-1, 0, 1]),
+    value: PropTypes.number,
     likesValue: PropTypes.number,
     dislikesValue: PropTypes.number,
     disable: PropTypes.bool
   };
   static defaultProps = {
-    activeVote: 0,
-    rating: 0,
+    activeValue: 0,
+    value: 0,
     likesValue: 0,
     dislikesValue: 0,
     disable: false
   };
   constructor(props) {
     super(props);
-    this.likeClickHandler = this.onVote.bind(this, 1);
-    this.dislikeClickHandler = this.onVote.bind(this, -1);
+    this.likeClickHandler = this.onChange.bind(this, 1);
+    this.dislikeClickHandler = this.onChange.bind(this, -1);
   }
-  onVote(value, e) {
+  onChange(value, e) {
     e.preventDefault();
     if (this.props.disable) return;
-    this.props.onVote && this.props.onVote(value);
+    this.props.onChange && this.props.onChange(value);
   }
   render() {
-    const {likesValue, dislikesValue, rating, activeVote, disable, styleName} = this.props;
-    const liked = activeVote === 1;
-    const disliked = activeVote === -1;
+    const {likesValue, dislikesValue, value, activeValue, disable, styleName} = this.props;
+    const liked = activeValue === 1;
+    const disliked = activeValue === -1;
 
-    // if rating is passed to props then will get value from this prop
-    let votesValue = rating || likesValue - dislikesValue;
+    // if value is passed to props then will get value from this prop
+    let votesValue = value || likesValue - dislikesValue;
 
     const styles = {
       root: cx({

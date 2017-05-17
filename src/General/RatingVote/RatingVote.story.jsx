@@ -6,38 +6,38 @@ module.exports = function ({ storiesOf, action, knob }) {
   return storiesOf('RatingVote', module)
     .add('api knob', () => (
       <RatingVote
-        activeVote={knob.number('Active vote', 0, {range: true, min: -1, max: 1, step: 1})}
-        rating={knob.number('Rating', 0)}
+        activeValue={knob.number('Active value', 0, {range: true, min: -1, max: 1, step: 1})}
+        value={knob.number('Value', 0)}
         likesValue={knob.number('Likes value', 0)}
         dislikesValue={knob.number('Dislikes value', 0)}
         disable={knob.boolean('Disable', false)}
-        onVote={action('onVote')}
+        onChange={action('onChange')}
       />
     ))
     .add('like', () => (
       <RatingVote
-        activeVote={1}
+        activeValue={1}
         likesValue={1}
-        onVote={action('onVote')}
+        onChange={action('onChange')}
       />
     ))
     .add('dislike', () => (
       <RatingVote
-        activeVote={-1}
+        activeValue={-1}
         dislikesValue={1}
-        onVote={action('onVote')}
+        onChange={action('onChange')}
       />
     ))
-    .add('positive rating', () => (
+    .add('positive value', () => (
       <RatingVote
-        rating={10}
-        onVote={action('onVote')}
+        value={10}
+        onChange={action('onChange')}
       />
     ))
-    .add('negative rating', () => (
+    .add('negative value', () => (
       <RatingVote
-        rating={-10}
-        onVote={action('onVote')}
+        value={-10}
+        onChange={action('onChange')}
       />
     ))
     .add('test actions', () => (

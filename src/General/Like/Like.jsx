@@ -8,33 +8,33 @@ export default class Like extends Component {
 
   static propTypes = {
     isLiked: React.PropTypes.bool.isRequired,
-    likeValue: React.PropTypes.number.isRequired
+    value: React.PropTypes.number.isRequired
   };
 
   static defaultProps = {
     isLiked: false,
-    likeValue: 0
+    value: 0
   };
 
   constructor(props) {
     super(props);
-    this.likeIt = this.onVote.bind(this, true);
-    this.unLikeIt = this.onVote.bind(this, false);
+    this.likeIt = this.onChange.bind(this, true);
+    this.unLikeIt = this.onChange.bind(this, false);
   }
 
-  onVote(like) {
-    this.props.onVote && this.props.onVote(like);
+  onChange(like) {
+    this.props.onChange && this.props.onChange(like);
   }
 
   render() {
-    const {isLiked, likeValue} = this.props;
+    const {isLiked, value} = this.props;
     const heart = (isLiked) ?
     <MdFavorite onClick={this.unLikeIt} size={20} styleName="heart"/> :
     <MdFavoriteOutline onClick={this.likeIt} size={20} styleName="heart-o"/>
     return (
       <div>
         <div styleName="wrapper">
-          {heart} <span styleName="likeValue">{likeValue}</span>
+          {heart} <span styleName="likeValue">{value}</span>
         </div>
       </div>
     );
