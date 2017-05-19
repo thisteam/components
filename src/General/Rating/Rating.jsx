@@ -18,7 +18,9 @@ class Rating extends Component {
   };
 
   static defaultProps = {
-    type: 'like'
+    type: 'like',
+    value: 0,
+    activeValue: 0
   };
 
   constructor(props) {
