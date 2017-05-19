@@ -4,7 +4,7 @@ import Like from '../Like';
 import RatingStar from '../RatingStar';
 import RatingVote from '../RatingVote';
 
-const RATING_COMPONENTS = {
+const RATING_COMPONENT = {
   like: Like,
   likeDislike: RatingVote,
   rating: RatingStar
@@ -34,7 +34,7 @@ class Rating extends Component {
         break;
     }
 
-    return React.createElement(RATING_COMPONENTS[type], componentProps);
+    return React.createElement(RATING_COMPONENT[type], componentProps);
   }
 }
 
